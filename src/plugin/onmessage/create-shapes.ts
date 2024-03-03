@@ -1,4 +1,4 @@
-import { FigmaUIMessage } from "../../generic/types";
+import { FigmaUIMessage } from "../../utils/types";
 
 export default (msg: FigmaUIMessage, data = {} ) => {
 

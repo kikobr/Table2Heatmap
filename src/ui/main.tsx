@@ -1,14 +1,14 @@
 import { useState, useRef, Fragment } from 'react';
 // import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import { postMessage } from '../generic/utils';
-import { FigmaUIMessage } from '../generic/types';
+import { postMessage } from '../utils/utils';
+import { FigmaUIMessage } from '../utils/types';
 
 import "./ui.css";
 import 'figma-plugin-ds/dist/figma-plugin-ds.css'
 import { Button, SectionTitle } from 'react-figma-ui';
 import * as Papa from 'papaparse';
-import {test} from '../generic/test-module';
+import {test} from '../utils/test-module';
 
 const App = () => {
 

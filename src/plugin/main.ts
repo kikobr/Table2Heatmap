@@ -1,9 +1,9 @@
 import createShapesHandler from './onmessage/create-shapes';
 import * as csvFileHandler from './onmessage/csv-file';
 
-import { postMessage } from '../generic/utils';
+import { postMessage } from '../utils/utils';
+import {test} from '../utils/test-module';
 import * as Papa from 'papaparse';
-import {test} from '../generic/test-module';
 
 export default () => {
 

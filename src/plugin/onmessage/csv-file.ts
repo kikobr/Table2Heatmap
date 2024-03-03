@@ -1,5 +1,5 @@
-import { FigmaUIMessage } from "../../generic/types";
-import { postMessage } from "../../generic/utils";
+import { FigmaUIMessage } from "../../utils/types";
+import { postMessage } from "../../utils/utils";
 
 // saves a csv locally from the UI
 export const csvFileSave = (msg: FigmaUIMessage, data = {} ) => {
