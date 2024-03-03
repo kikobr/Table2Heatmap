@@ -1,16 +1,15 @@
 {
   "name": "Table2Heatmap",
-  "id": "1344053579186967903",
+  "id": "1345618790369891083",
   "api": "1.0.0",
-  "main": "dist/code.js",
-  "ui": "dist/ui.html",
-  
+  "main": "dist/plugin.js",
   "capabilities": [],
   "enableProposedApi": false,
   "editorType": [
     "figma",
     "figjam"
   ],
+  "ui": "dist/ui.html",
   "networkAccess": {
     "allowedDomains": [
       "none"

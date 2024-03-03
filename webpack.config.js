@@ -12,7 +12,7 @@ module.exports = (env, argv) => ({
 
   entry: {
     ui: './src/ui.tsx', // The entry point for your UI code
-    code: './src/code.ts', // The entry point for your plugin code
+    code: './src/plugin.ts', // The entry point for your plugin code
   },
 
   module: {
@@ -44,7 +44,7 @@ module.exports = (env, argv) => ({
   output: {
     filename: (pathData) => {
       return pathData.chunk.name === 'code'
-        ? 'code.js'
+        ? 'plugin.js'
         : '[name].[contenthash].js';
     },
     path: path.resolve(__dirname, 'dist'), // Compile into a folder called "dist"
@@ -58,9 +58,8 @@ module.exports = (env, argv) => ({
       global: {}, // Fix missing symbol error when running in developer VM
     }),
     new HtmlWebpackPlugin({
-      cache: false,
       inject: 'body',
-      template: './src/ui.html',
+      template: './src/ui/ui.html',
       filename: 'ui.html',
       chunks: ['ui'],
     }),

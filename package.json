@@ -1,12 +1,11 @@
 {
-  "name": "Table2Heatmap",
+  "name": "table2heatmap",
   "version": "1.0.0",
   "description": "",
-  "main": "code.js",
+  "main": "dist/plugin.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode=development --watch",
-    "watch": "npm run build -- --watch",
     "build": "webpack --mode=production"
   },
   "author": "Figma",
@@ -27,7 +26,10 @@
     "webpack-cli": "^5.1.1"
   },
   "dependencies": {
+    "figma-plugin-ds": "^1.0.1",
+    "papaparse": "^5.4.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-figma-ui": "^1.1.0"
   }
 }

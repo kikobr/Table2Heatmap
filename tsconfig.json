@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "typeRoots": [
       "./node_modules/@types",
       "./node_modules/@figma"
-    ]
+    ],
+    "moduleResolution": "node"
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"]
 }
