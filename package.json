@@ -13,6 +13,7 @@
   "devDependencies": {
     "@figma/plugin-typings": "*",
     "@types/node": "^16.7.1",
+    "@types/papaparse": "^5.3.14",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
     "css-loader": "^6.2.0",
@@ -26,10 +27,13 @@
     "webpack-cli": "^5.1.1"
   },
   "dependencies": {
+    "dataframe-js": "^1.4.4",
     "figma-plugin-ds": "^1.0.1",
+    "fs": "^0.0.1-security",
     "papaparse": "^5.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-figma-ui": "^1.1.0"
+    "react-figma-ui": "^1.1.0",
+    "zebras": "^0.0.20"
   }
 }

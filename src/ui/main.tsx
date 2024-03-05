@@ -34,7 +34,7 @@ const App = () => {
         }
         
     }    
-
+  
 	const submitForm = (evt) => {
 		evt.preventDefault();
 
@@ -57,6 +57,10 @@ const App = () => {
 		evt.preventDefault();
 	}
 
+	const heatmapGenerate = (evt) => {
+		postMessage('heatmap:generate', null);
+	}
+
 	return (
 		<main>
 
@@ -65,8 +69,9 @@ const App = () => {
             <form id="table-form" onSubmit={submitForm}>
               <label htmlFor="table-file">Upload CSV</label>
               <input type="file" id="table-file" ref={formFileRef} />
-              <Button tint="primary" type="submit">Read CSV</Button>
+              <Button tint="secondary" type="submit">Read CSV</Button>
             </form>
+            <Button tint="primary" onClick={heatmapGenerate}>Generate Heatmap</Button>
 
             {
               localCsv.data.length > 0 ? 
