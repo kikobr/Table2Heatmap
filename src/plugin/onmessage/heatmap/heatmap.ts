@@ -51,13 +51,14 @@ export async function heatmapGenerate (msg: FigmaUIMessage, data = {} ) {
             // resize it over selected frame matched children
             if(selectedFrame.type == "FRAME"){
                 let selectedFrameSpotNodes = selectedFrame.findAll(n => n.name === item['Destination Page'])
-                selectedFrameSpotNodes.forEach((spotNode, matchIndex) => {
+                selectedFrameSpotNodes.forEach((spotNode: FrameNode, matchIndex) => {
 
                     // create a spotFrame for each matching spotNodes
                     const spotFrame = layout.spot({
                         name: item["Destination Page"],
                         percentage: percentage,
                         index: index,
+                        cornerRadius: spotNode.cornerRadius
                     });
                     
                     // add spot frame to selection
@@ -94,8 +95,8 @@ export async function heatmapGenerate (msg: FigmaUIMessage, data = {} ) {
     // copy selected frame and manipulate it
     const innerFrameClone = selectedFrame.clone();
     innerFrameClone.blendMode = "LUMINOSITY";
-    innerFrameClone.opacity = 0.8;
-    
+    innerFrameClone.opacity = 0.5;
+    // create a blank background so that the luminosity can show up as a grayscale image
     const outerFrameClone = figma.createFrame();
     outerFrameClone.resize(innerFrameClone.width, innerFrameClone.height);
     outerFrameClone.x = innerFrameClone.absoluteBoundingBox.x;

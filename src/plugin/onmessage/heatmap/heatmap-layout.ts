@@ -1,10 +1,12 @@
 import { isAbsolute } from "path";
 
 const fontSize = 16;
-const cornerRadius = 10;
 const fontName = {
     regular: { family: "Inter", style: "Regular" },
     bold: { family: "Inter", style: "Bold" }
+}
+const defaults = {
+    cornerRadius: 10
 }
 
 export function setPadding (frame: FrameNode, padding: number){
@@ -20,6 +22,8 @@ export function spot (opts:any = {}){
     const padding = opts.padding ? opts.padding : 16;
     const index = opts.index ? opts.index : 0;
     const percentage = opts.percentage ? opts.percentage : 0;
+    // tries to replicate reference frame cornerRadius
+    const cornerRadius = opts.cornerRadius ? opts.cornerRadius : defaults.cornerRadius;
 
     // create frames and insert children
     const frame = figma.createFrame();
@@ -147,7 +151,7 @@ export function tableFrame (opts: any = {}){
     frame.layoutSizingVertical = 'HUG';
     frame.primaryAxisAlignItems = 'MIN';
     frame.counterAxisAlignItems = 'MIN';
-    frame.cornerRadius = cornerRadius;
+    frame.cornerRadius = defaults.cornerRadius;
 
     return frame;
 }

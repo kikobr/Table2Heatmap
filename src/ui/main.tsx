@@ -3,6 +3,7 @@ import { useState, useRef, Fragment } from 'react';
 import * as ReactDOM from "react-dom/client";
 import { postMessage } from '../utils/utils';
 import { FigmaUIMessage } from '../utils/types';
+import { parsePastedTable } from '../utils/table-utils';
 
 import "./ui.css";
 import 'figma-plugin-ds/dist/figma-plugin-ds.css'
@@ -61,10 +62,25 @@ const App = () => {
 		postMessage('heatmap:generate', null);
 	}
 
+	const pasteField = useRef(null);
+  const paste = async (evt) => {
+
+    // Get pasted data via clipboard API
+    const clipboardData = evt.clipboardData;
+    const pastedData = clipboardData.getData('Text');
+    // const clipboardContents = await navigator.clipboard.read();
+    // console.log(evt);
+    // console.log(pastedData)
+    console.log(parsePastedTable(pastedData));
+  }
+
 	return (
 		<main>
 
 			<h1>Table2Heatmap</h1>
+
+            {/* <Button tint="secondary" onClick={paste}>Paste</Button> */}
+            <textarea onPaste={paste}></textarea>
 
             <form id="table-form" onSubmit={submitForm}>
               <label htmlFor="table-file">Upload CSV</label>
